@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b34">
+  <meta name="description" content="邻里纠纷协同处置课堂模拟页面，使用虚构数据，不连接真实政务系统。">
+  <title>红领通 · 基层治理协同工作台（课堂模拟）</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="基层治理协同工作台首页">
+      <span class="brand-mark">治</span>
+      <span><strong>红领通</strong><small>基层治理协同工作台 · 教学演示环境</small></span>
+    </a>
+    <div class="top-meta">
+      <span class="simulation-label"><i></i>教学演示 · 虚构数据</span>
+      <span class="clock">演示批次 2026年9月</span>
+      <button class="top-button" id="resetButton" title="重新开始本次推演">重新开始演示</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <span class="overline">工作台</span>
+        <strong>事件处置</strong>
+      </div>
+      <nav class="module-nav" aria-label="工作台模块">
+        <span class="module-item selected" aria-current="page"><span class="module-icon">办</span>事件办理</span>
+        <span class="module-item"><span class="module-icon">网</span>网格走访</span>
+        <span class="module-item"><span class="module-icon">统</span>统计分析</span>
+      </nav>
+      <div class="queue-heading"><span>待办工单</span><b>01</b></div>
+      <button class="ticket active" type="button">
+        <span class="ticket-top"><i class="status-dot"></i><small id="sideStatus">待受理</small><small>模拟</small></span>
+        <strong>邻里噪声纠纷</strong>
+        <span class="ticket-foot">萧山区 · 某老旧小区</span>
+        <span class="ticket-foot">工单编号 ZL-202609-0186</span>
+      </button>
+      <div class="queue-heading history-heading"><span>处置流程</span><span class="muted">5 个环节</span></div>
+      <nav class="step-nav" aria-label="工单处置流程">
+        <button class="step-link current" data-step="0"><span class="step-num">01</span><span><b>事件上报</b><small>网格员提交情况</small></span><i></i></button>
+        <button class="step-link" data-step="1" disabled><span class="step-num">02</span><span><b>辅助研判</b><small>人工复核风险提示</small></span><i></i></button>
+        <button class="step-link" data-step="2" disabled><span class="step-num">03</span><span><b>协同处置</b><small>派单与现场调解</small></span><i></i></button>
+        <button class="step-link" data-step="3" disabled><span class="step-num">04</span><span><b>协商方案</b><small>双方自愿确认</small></span><i></i></button>
+        <button class="step-link" data-step="4" disabled><span class="step-num">05</span><span><b>回访结案</b><small>跟踪履行情况</small><i></i></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="online-dot"></span>演示环境 <span class="muted">· 数据仅在本页运行</span></div>
+    </aside>
+
+    <section class="main-panel">
+      <div class="page-heading">
+        <div>
+          <div class="breadcrumbs">红领通演示 <span>/</span> 事件办理 <span>/</span> <b>邻里噪声纠纷</b></div>
+          <h1 id="pageTitle">事件上报</h1>
+          <p id="pageSub">网格员现场核实后，记录双方诉求并提交工单。</p>
+        </div>
+        <div class="heading-right"><span class="case-id">工单编号　ZL-202609-0186</span><span class="tag tag-sim">虚构工单</span></div>
+      </div>
+
+      <section class="alert-strip" id="alertStrip">
+        <span class="alert-symbol">i</span>
+        <p><b>教学演示环境</b> 本页面为课堂情景模拟，居民、地点、工单编号及处置记录均为虚构内容，不连接任何真实政务系统。</p>
+      </section>
+
+      <div class="workflow-bar" aria-label="当前进度">
+        <span class="workflow-item active" data-wf="0"><i>1</i>上报</span><span class="workflow-line"></span>
+        <span class="workflow-item" data-wf="1"><i>2</i>研判</span><span class="workflow-line"></span>
+        <span class="workflow-item" data-wf="2"><i>3</i>处置</span><span class="workflow-line"></span>
+        <span class="workflow-item" data-wf="3"><i>4</i>协商</span><span class="workflow-line"></span>
+        <span class="workflow-item" data-wf="4"><i>5</i>回访</span>
+      </div>
+
+      <div class="content-grid">
+        <div class="work-area" id="workArea" aria-live="polite"></div>
+        <aside class="detail-rail" id="detailRail"></aside>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
